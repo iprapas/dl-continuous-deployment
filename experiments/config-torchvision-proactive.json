@@ -1,0 +1,55 @@
+{
+  "name": "Cifar_Resnet_DeployRatio_0.001",
+  "n_gpu": 1,
+  "arch": {
+    "type": "torchvision_model",
+      "args": {
+        "model_name": "mnasnet1_0",
+      "pretrained": false,
+      "frozen": 0
+    }
+  },
+  "data_loader": {
+    "type": "CifarDataLoaderProactive",
+    "args": {
+      "data_dir": "data/",
+      "batch_size": 128,
+      "trigger_size": 8,
+      "history_end": 10000,
+      "window_size": 0,
+      "num_workers": 1,
+      "always_include_new": true,
+      "keep_probs": false
+    }
+  },
+  "optimizer": {
+    "type": "Adam",
+    "resume": true,
+    "args": {
+      "lr": 0.001,
+      "weight_decay": 0,
+      "amsgrad": true
+    }
+  },
+  "loss": "cross_entropy",
+  "metrics": [
+    "Accuracy",
+    "TopkAccuracy"
+  ],
+  "trainer": {
+    "epochs": 51,
+    "save_dir": "saved/",
+    "save_period": 10,
+    "verbosity": 2,
+    "monitor": "min val_loss",
+    "early_stop": 10,
+    "tensorboard": true
+  },
+  "deployment_ratio" : 0.01,
+  "sparse_train" : true,
+  "compress_type" : "no",
+  "compress_memory": true,
+  "deploy_period" : "100",
+  "online_training" : false,
+  "init_tracking" : true
+}
