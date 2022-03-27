@@ -2,7 +2,7 @@
 
 This code is based on the thesis I did for the completion of my studies in the Big Data Management and Analytics (BDMA) Erasmus Mundus MSc. 
 
-It was presented in [LWDA 2021](https://mcml.ai/lwda2021/fgdb/) and published in the [Datenbank Spektrum](https://www.springer.com/journal/13222/) journal. [preprint pdf](https://iprapas.github.io/blog/lwda2021-article/dl_continuous_deployment.pdf)
+It was presented in [LWDA 2021](https://mcml.ai/lwda2021/fgdb/) and published in the [Datenbank Spektrum](https://link.springer.com/article/10.1007/s13222-021-00386-8) journal.
 
 In this project, we experiment with continuous training and deployment of Deep Learning models. 
 
